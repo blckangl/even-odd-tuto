@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'evenOddGame';
+  evenNumbers: Array<number> = new Array<number>();
+  oddNumbers: Array<number> = new Array<number>();
+
+
+  onEvenNumber(event: { num: number }) {
+    console.log("from even listener", event);
+    this.evenNumbers.push(event.num)
+  }
+
+  onOddNumber(event: { num: number }) {
+    this.oddNumbers.push(event.num)
+
+  }
 }
